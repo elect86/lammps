@@ -4,7 +4,8 @@ plugins {
 
 group = "casus.mala"
 version = "0.0.01"
-
+println(rootDir)
+println(rootDir.absolutePath)
 publishing {
     publications {
         create<MavenPublication>("maven") {
