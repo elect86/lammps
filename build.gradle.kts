@@ -5,7 +5,8 @@ plugins {
 group = "casus.mala"
 version = "0.0.01"
 println(rootDir)
-println(rootDir.absolutePath)
+println(rootDir.resolve("liblammps"))
+println(rootDir.resolve("liblammps/liblammps.so.0"))
 publishing {
     publications {
         create<MavenPublication>("maven") {
