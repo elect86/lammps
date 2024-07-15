@@ -22,13 +22,10 @@ jobs:
       run: sudo apt install -y build-essential
 
     - name: Create Build Environment
+      run: ls -la
+
+    - name: Create Build Environment
       run: mkdir build
-      
-    - name: Create Build Environment
-      run: ls
-      
-    - name: Create Build Environment
-      run: ls lammps/
       
     - name: Change into Build Directory
       run: cd build
