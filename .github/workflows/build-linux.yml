@@ -29,9 +29,12 @@ jobs:
         mkdir build
         cd build
         ls -la
+        pwd
         
     - name: Building LAMMPS via CMake
-      run: cmake ../cmake -D BUILD_SHARED_LIBS=yes -D PKG_ML-SNAP=yes 
+      run: |
+        pwd
+        cmake ../cmake -D BUILD_SHARED_LIBS=yes -D PKG_ML-SNAP=yes 
 
     - name: build
       run: cmake --build .
