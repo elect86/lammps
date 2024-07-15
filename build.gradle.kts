@@ -17,7 +17,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            uri("https://maven.pkg.github.com/octocat/hello-world")
+            uri("https://maven.pkg.github.com/elect86/lammps")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
