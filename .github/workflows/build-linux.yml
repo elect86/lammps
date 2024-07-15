@@ -28,7 +28,7 @@ jobs:
       run: cd build
 
     - name: Building LAMMPS via CMake
-      run: cmake ../cmake -D BUILD_SHARED_LIBS=yes PKG_ML-SNAP=yes 
+      run: cmake ../cmake -D BUILD_SHARED_LIBS=yes -D PKG_ML-SNAP=yes 
 
     - name: build
       run: cmake --build .
