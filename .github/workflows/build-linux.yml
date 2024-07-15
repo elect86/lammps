@@ -19,7 +19,7 @@ jobs:
         ref: mala
 
     - name: Install build-essential
-      run: apt install build-essential
+      run: sudo apt install -y build-essential
 
     - name: Create Build Environment
       run: mkdir build
