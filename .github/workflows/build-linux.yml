@@ -43,7 +43,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: liblammps
-        path: liblammps.so.0
+        path: build/liblammps.so.0
 
   publish:
     runs-on: ubuntu-latest
