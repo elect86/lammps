@@ -24,30 +24,13 @@ jobs:
     - name: Create Build Environment
       run: mkdir build
 
-    # - name: Set up ccache
-    #   uses: actions/cache@v3
-    #   with:
-    #     path: ${{ env.CCACHE_DIR }}
-    #     key: ubuntu-ccache-${{ github.sha }}
-    #     restore-keys: ubuntu-ccache-
-
     - name: Building LAMMPS via CMake
       shell: bash
       working-directory: build
-      run: |
-        # ccache -z
-        cmake -C ../cmake/presets/clang.cmake \
-              -C ../cmake/presets/most.cmake \
-              -D DOWNLOAD_POTENTIALS=off \
-              -D CMAKE_CXX_COMPILER_LAUNCHER=ccache \
-              -D CMAKE_C_COMPILER_LAUNCHER=ccache \
-              # -D ENABLE_TESTING=on \
-              -D BUILD_SHARED_LIBS=yes \
-              PKG_ML-SNAP=yes \
-              -D LAMMPS_EXCEPTIONS=on \
-              ../cmake
-        cmake --build . --parallel 2
-        ccache -s
+      run: cmake ../cmake -D BUILD_SHARED_LIBS=yes PKG_ML-SNAP=yes 
+
+    - name: build
+      run: cmake --build .
 
     - name: show build content
       run: ls build/
