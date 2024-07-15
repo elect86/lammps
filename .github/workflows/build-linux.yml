@@ -6,7 +6,7 @@ on: push
 jobs:
   build:
     name: Build Linux
-    if: ${{ github.repository == 'lammps/lammps' }}
+    # if: ${{ github.repository == 'lammps/lammps' }}
     runs-on: ubuntu-latest
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
