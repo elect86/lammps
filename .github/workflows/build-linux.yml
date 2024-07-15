@@ -39,6 +39,12 @@ jobs:
       working-directory: build
       run: ls -la
 
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: liblammps
+        path: liblammps.so.0
+
   publish:
     runs-on: ubuntu-latest
     needs: build
@@ -53,6 +59,9 @@ jobs:
           distribution: 'temurin'
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
 
       - name: Publish package
         run: |
