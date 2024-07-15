@@ -25,18 +25,14 @@ jobs:
       run: ls -la
 
     - name: Create Build Environment
-      run: |
-        mkdir build
-        cd build
-        ls -la
-        pwd
+      run: mkdir build
         
     - name: Building LAMMPS via CMake
-      run: |
-        pwd
-        cmake ../cmake -D BUILD_SHARED_LIBS=yes -D PKG_ML-SNAP=yes 
+      working-directory: build
+      run: cmake ../cmake -D BUILD_SHARED_LIBS=yes -D PKG_ML-SNAP=yes 
 
     - name: build
+      working-directory: build
       run: cmake --build .
 
     - name: show build content
