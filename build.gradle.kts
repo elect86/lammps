@@ -9,7 +9,7 @@ println(rootDir.absolutePath)
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            artifact(rootDir.resolve("build/liblammps.so.0"))
+            artifact(rootDir.resolve("liblammps/liblammps.so.0"))
         }
     }
     repositories {
