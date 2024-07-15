@@ -4,13 +4,14 @@ plugins {
 
 group = "casus.mala"
 version = "0.0.01"
-println(rootDir)
-println(rootDir.resolve("liblammps"))
-println(rootDir.resolve("liblammps/liblammps.so.0"))
+
+val lib = rootDir.resolve("liblammps/liblammps.so.0")
+println("lib exists: ${lib.exists()}")
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            artifact(rootDir.resolve("liblammps/liblammps.so.0"))
+            artifact(lib)
         }
     }
     repositories {

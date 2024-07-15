@@ -60,6 +60,6 @@ jobs:
         run: |
           pwd
           ls -la liblammps
-          ./gradlew publish
+          ./gradlew --stacktrace publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
